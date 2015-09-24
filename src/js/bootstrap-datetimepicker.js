@@ -65,6 +65,7 @@
       actualFormat,
       parseFormats,
       currentViewMode,
+      updateModel,
       datePickerModes = [
         {
           clsName: 'days',
@@ -829,6 +830,7 @@
           date = targetMoment;
           viewDate = date.clone();
           input.val(date.format(actualFormat));
+          updateModel();
           element.data('date', date.format(actualFormat));
           unset = false;
           update();
@@ -1917,6 +1919,11 @@
       }
       update();
       return picker;
+    };
+
+    //This method receives a function from date-directive, in order to update the model
+    picker.getModel = function(modelFunction){
+      updateModel = modelFunction;
     };
 
     picker.calendarWeeks = function (calendarWeeks) {
