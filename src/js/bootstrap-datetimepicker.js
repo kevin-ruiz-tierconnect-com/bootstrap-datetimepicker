@@ -118,9 +118,10 @@
         'space': 32,
         32: 'space',
         't': 84,
-        84: 't',
-        'delete': 46,
-        46: 'delete'
+        84: 't'
+        //'delete': 46,
+        //46: 'delete'
+        //
       },
       keyState = {},
 
